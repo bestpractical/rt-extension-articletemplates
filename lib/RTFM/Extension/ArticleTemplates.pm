@@ -2,12 +2,14 @@ package RTFM::Extension::ArticleTemplates;
 
 our $VERSION = '0.01';
 
+use 5.8.3;
 use strict;
 use warnings;
 
+
 =head1 NAME
 
-RTFM::Extension::ArticleTemplates - turns articles' custom fields into templates.
+RTFM::Extension::ArticleTemplates - turns articles into dynamic templates.
 
 =head1 DESCRIPTION
 
@@ -37,8 +39,8 @@ commands:
 
 =head1 AUTHOR
 
-Kevin Falcone  C<< <falcone@bestpractical.com> >>
-Ruslan Zakirov C<< <ruz@bestpractical.com> >>
+Kevin Falcone E<lt>falcone@bestpractical.comE<gt>
+Ruslan Zakirov E<lt>ruz@bestpractical.comE<gt>
 
 =head1 LICENCE AND COPYRIGHT
 
