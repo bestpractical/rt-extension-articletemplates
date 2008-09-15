@@ -1,6 +1,6 @@
 package RTFM::Extension::ArticleTemplates;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use 5.8.3;
 use strict;
@@ -36,6 +36,8 @@ commands:
     perl Makefile.PL
     make
     make install
+
+Set @Plugins option if you're using RT 3.8.1 or newer.
 
 =head1 AUTHOR
 

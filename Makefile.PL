@@ -10,7 +10,8 @@ my ($lib_path) = $INC{'RT.pm'} =~ /^(.*)[\\\/]/;
 my $local_lib_path = "$RT::LocalPath/lib";
 
 unshift @INC, $local_lib_path, $lib_path;
-requires('RT::FM' => '2.2.2');
+# XXX: Cannot depend on RT::FM with new plugins subsystem
+#requires('RT::FM' => '2.2.2');
 
 auto_install;
 
