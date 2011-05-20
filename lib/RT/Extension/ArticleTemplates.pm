@@ -1,11 +1,9 @@
-package RTFM::Extension::ArticleTemplates;
-
-our $VERSION = '0.02';
-
-use 5.8.3;
 use strict;
 use warnings;
 
+package RT::Extension::ArticleTemplates;
+
+our $VERSION = '0.03';
 
 =head1 NAME
 
@@ -30,14 +28,16 @@ template.
 
 =head1 INSTALLATION
 
-This extension requires RTFM 2.2.2 at least. To install it run the following
-commands:
+This extension requires RT 4.0.0 or higher.
+
+To install it run the following commands:
 
     perl Makefile.PL
     make
     make install
 
-Set @Plugins option if you're using RT 3.8.1 or newer.
+You'll also need to add RT::Extension::ArticleTemplates to your @Plugins
+config line.
 
 =head1 AUTHOR
 

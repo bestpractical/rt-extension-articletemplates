@@ -1,5 +1,5 @@
 Changes
-html/Callbacks/RTFM-Extension-ArticleTemplates/RTFM/Article/Elements/Preformatted/ProcessContent
+html/Callbacks/RT-Extension-ArticleTemplates/Articles/Article/Elements/Preformatted/ProcessContent
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -12,8 +12,8 @@ inc/Module/Install/Metadata.pm
 inc/Module/Install/RTx.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
+lib/RT/Extension/ArticleTemplates.pm
 lib/RT/FM/Article_Local.pm
-lib/RTFM/Extension/ArticleTemplates.pm
 Makefile.PL
 MANIFEST
 META.yml
