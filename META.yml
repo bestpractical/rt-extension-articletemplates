@@ -1,5 +1,5 @@
 ---
-abstract: 'RT Extension-ArticleTemplates Extension'
+abstract: 'turns articles into dynamic templates'
 author:
   - 'Kevin Falcone <falcone@bestpractical.com>'
 build_requires:

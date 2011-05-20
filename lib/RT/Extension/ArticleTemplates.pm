@@ -7,7 +7,7 @@ our $VERSION = '0.03';
 
 =head1 NAME
 
-RTFM::Extension::ArticleTemplates - turns articles into dynamic templates.
+RT::Extension::ArticleTemplates - turns articles into dynamic templates
 
 =head1 DESCRIPTION
 
