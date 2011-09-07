@@ -1,5 +1,9 @@
 Revision history for RT-Extension-ArticleTemplates
 
+0.04  Wed Sep  7 2011
+
+    Support for processing subject overrides
+
 0.03  Fri May 20 2011
 
     Renamed to RT-Extension-ArticleTemplates and made compatible with RT 4.0.0
