@@ -16,7 +16,7 @@
 %# 
 %# END LICENSE BLOCK
 <%init>
-my ($new, $msg) = $Article->ParseTemplate( $$content, Ticket => $Ticket );
+my ($new, $msg) = $Article->ParseTemplate( $$content, Ticket => $Ticket, request_args => { $m->request_args } );
 unless ( defined $new && length $new ) {
     $RT::Logger->error("Couldn't parse article's content: $msg");
 } else {
