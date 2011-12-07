@@ -1,5 +1,9 @@
 Revision history for RT-Extension-ArticleTemplates
 
+0.05  Wed Dec  7 2011
+
+    Optionally pass in request arguments to the article template
+
 0.04  Wed Sep  7 2011
 
     Support for processing subject overrides
