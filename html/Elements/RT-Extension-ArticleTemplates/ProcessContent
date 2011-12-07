@@ -1,0 +1,13 @@
+<%init>
+my ($new, $msg) = $Article->ParseTemplate( $$content, Ticket => $Ticket, request_args => { $m->request_args } );
+unless ( defined $new && length $new ) {
+    $RT::Logger->error("Couldn't parse article's content: $msg");
+} else {
+    $$content = $new;
+}
+</%init>
+<%args>
+$Article
+$Ticket => undef
+$content
+</%args>
