@@ -8,6 +8,9 @@ if (RT->Config->Get('ArticleTemplatesWithRequestArgs')) {
 my ($new, $msg) = $Article->ParseTemplate( $$content, %variables );
 unless ( defined $new && length $new ) {
     $RT::Logger->error("Couldn't parse article's content: $msg");
+    push @{ $session{'Actions'}{''} ||=[] },
+        loc("Couldn't load article. Contact system administrator.");
+    $$content = '';
 } else {
     $$content = $new;
 }
