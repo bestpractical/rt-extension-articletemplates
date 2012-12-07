@@ -9,7 +9,7 @@ requires_rt('4.0.0');
 
 build_requires 'Test::More';
 
-no_index('package' => 'RT::FM::Article');
+no_index('package' => 'RT::Article');
 
 sign;
 

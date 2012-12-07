@@ -21,7 +21,7 @@ no_index:
     - inc
     - t
   package:
-    - RT::FM::Article
+    - RT::Article
 resources:
   license: http://opensource.org/licenses/gpl-license.php
 version: 0.06
