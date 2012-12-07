@@ -3,7 +3,7 @@ use warnings;
 
 package RT::Extension::ArticleTemplates;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 =head1 NAME
 

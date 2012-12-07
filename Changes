@@ -1,5 +1,9 @@
 Revision history for RT-Extension-ArticleTemplates
 
+0.07  Thu Dec  6 2012
+
+    Fix RT::FM::Article -> RT::Article in the no_index
+
 0.06  Thu Dec  6 2012
 
     Generate a README from the pod and don't index RT::Article
