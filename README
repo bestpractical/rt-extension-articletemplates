@@ -1,1 +1,64 @@
-Read `perldoc lib/RT/Extension/ArticleTemplates.pm`.
+NAME
+    RT::Extension::ArticleTemplates - turns articles into dynamic templates
+
+DESCRIPTION
+    When this extension is installed RTFM parses content of articles as a
+    template using Text::Template module. Using this extension you can make
+    your articles dynamic. Text::Template module is used to parse RT's
+    Templates as well and its syntax is pretty simple - you can consult RT
+    docs/wiki or module's documentation.
+
+VERY IMPORTANT
+    It's a SECURITY RISK to install this extension on systems where articles
+    can be changed by not trusted users. You're warned!
+
+    Your articles may contain some text that looks like a template and will
+    be parsed after installation when it's actually is not valid template.
+
+INSTALLATION
+    This extension requires RT 4.0.0 or higher.
+
+    perl Makefile.PL
+    make
+    make install
+        May need root permissions
+
+    Edit your /opt/rt4/etc/RT_SiteConfig.pm
+        Add this line:
+
+            Set(@Plugins, qw(RT::Extension::ArticleTemplates));
+
+        or add "RT::Extension::ArticleTemplates" to your existing @Plugins
+        line.
+
+    Clear your mason cache
+            rm -rf /opt/rt4/var/mason_data/obj
+
+    Restart your webserver
+
+CONFIGURATION
+  ArticleTemplatesWithRequestArgs
+    Enabling this option passes in the Mason request arguments to your
+    article templates as the hashref $request_args.
+
+    Warning: Request args are user-controlled direct input, so all the
+    normal cautions of using them apply. Never trust user input.
+
+    Disabled by default.
+
+AUTHOR
+    Kevin Falcone <falcone@bestpractical.com> Ruslan Zakirov
+    <ruz@bestpractical.com>
+
+LICENCE AND COPYRIGHT
+    Copyright (c) 2008-2012, Best Practical Solutions, LLC. All rights
+    reserved.
+
+    This module is free software; you can redistribute it and/or modify it
+    under the terms of version 2 of the GNU General Public License.
+
+  ParseTemplate $CONTENT, %TEMPLATE_ARGS
+    Parses $CONTENT string as a template (Text::Template). $Article and
+    other arguments from %TEMPLATE_ARGS are available in code of the
+    template as perl variables.
+

@@ -3,6 +3,7 @@ use inc::Module::Install;
 RTx         'RT-Extension-ArticleTemplates';
 license     'GPL version 2';
 all_from    'lib/RT/Extension/ArticleTemplates.pm';
+readme_from 'lib/RT/Extension/ArticleTemplates.pm';
 
 requires_rt('4.0.0');
 

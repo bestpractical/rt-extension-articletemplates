@@ -30,14 +30,31 @@ template.
 
 This extension requires RT 4.0.0 or higher.
 
-To install it run the following commands:
+=over
 
-    perl Makefile.PL
-    make
-    make install
+=item perl Makefile.PL
 
-You'll also need to add RT::Extension::ArticleTemplates to your @Plugins
-config line.
+=item make
+
+=item make install
+
+May need root permissions
+
+=item Edit your /opt/rt4/etc/RT_SiteConfig.pm
+
+Add this line:
+
+    Set(@Plugins, qw(RT::Extension::ArticleTemplates));
+
+or add C<RT::Extension::ArticleTemplates> to your existing C<@Plugins> line.
+
+=item Clear your mason cache
+
+    rm -rf /opt/rt4/var/mason_data/obj
+
+=item Restart your webserver
+
+=back
 
 =head1 CONFIGURATION
 
@@ -58,7 +75,7 @@ Ruslan Zakirov E<lt>ruz@bestpractical.comE<gt>
 
 =head1 LICENCE AND COPYRIGHT
 
-Copyright (c) 2008-2011, Best Practical Solutions, LLC.  All rights reserved.
+Copyright (c) 2008-2012, Best Practical Solutions, LLC.  All rights reserved.
 
 This module is free software; you can redistribute it and/or
 modify it under the terms of version 2 of the GNU General Public License.
