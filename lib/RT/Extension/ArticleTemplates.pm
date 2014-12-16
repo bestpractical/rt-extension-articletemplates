@@ -3,46 +3,47 @@ use warnings;
 
 package RT::Extension::ArticleTemplates;
 
-our $VERSION = '0.07';
+our $VERSION = '1.00';
 
 =head1 NAME
 
-RT::Extension::ArticleTemplates - turns articles into dynamic templates
+RT::Extension::ArticleTemplates - Turns Articles into dynamic templates
 
 =head1 DESCRIPTION
 
-When this extension is installed RTFM parses content of articles as
-a template using L<Text::Template> module. Using this extension you can
-make your articles dynamic. L<Text::Template> module is used to parse
-RT's Templates as well and its syntax is pretty simple - you can consult
-RT docs/wiki or module's documentation.
+When this extension is installed, RT parses the content of Articles as a
+template, using the L<Text::Template> module; this can be used to make
+your Articles dynamic.  L<Text::Template> is the same module that RT's
+Templates use as well.
 
 =head1 VERY IMPORTANT
 
 It's a B<SECURITY RISK> to install this extension on systems where
-articles can be changed by not trusted users. You're warned!
+articles can be changed by not trusted users.
 
-Your articles may contain some text that looks like a template and
-will be parsed after installation when it's actually is not valid
-template.
+if your articles contain text that currently looks like a template, it
+will begin being parsed as L<Text::Template> code after this extension
+is installed -- even if it is not a valid template.
 
 =head1 INSTALLATION
 
-This extension requires RT 4.0.0 or higher.
-
 =over
 
-=item perl Makefile.PL
+=item C<perl Makefile.PL>
 
-=item make
+=item C<make>
 
-=item make install
+=item C<make install>
 
 May need root permissions
 
-=item Edit your /opt/rt4/etc/RT_SiteConfig.pm
+=item Edit your F</opt/rt4/etc/RT_SiteConfig.pm>
 
-Add this line:
+If you are using RT 4.2 or greater, add this line:
+
+    Plugin('RT::Extension::ArticleTemplates');
+
+For RT 4.0, add this line:
 
     Set(@Plugins, qw(RT::Extension::ArticleTemplates));
 
@@ -68,17 +69,9 @@ cautions of using them apply.  Never trust user input.
 
 Disabled by default.
 
-=head1 AUTHOR
+=head1 METHODS
 
-Kevin Falcone E<lt>falcone@bestpractical.comE<gt>
-Ruslan Zakirov E<lt>ruz@bestpractical.comE<gt>
-
-=head1 LICENCE AND COPYRIGHT
-
-Copyright (c) 2008-2012, Best Practical Solutions, LLC.  All rights reserved.
-
-This module is free software; you can redistribute it and/or
-modify it under the terms of version 2 of the GNU General Public License.
+The following methods from L<RT::Article> are redefined:
 
 =cut
 
@@ -143,5 +136,29 @@ sub ParseTemplate {
 
     return ($retval);
 }
+
+=head1 AUTHOR
+
+Best Practical Solutions, LLC E<lt>modules@bestpractical.comE<gt>
+
+=head1 BUGS
+
+All bugs should be reported via email to
+
+    L<bug-RT-Extension-ArticleTemplates@rt.cpan.org|mailto:bug-RT-Extension-ArticleTemplates@rt.cpan.org>
+
+or via the web at
+
+    L<rt.cpan.org|http://rt.cpan.org/Public/Dist/Display.html?Name=RT-Extension-ArticleTemplates>.
+
+=head1 LICENSE AND COPYRIGHT
+
+This software is Copyright (c) 2014 by Best Practical Solutions
+
+This is free software, licensed under:
+
+  The GNU General Public License, Version 2, June 1991
+
+=cut
 
 1;
