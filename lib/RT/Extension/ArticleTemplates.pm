@@ -12,9 +12,9 @@ RT::Extension::ArticleTemplates - Turns Articles into dynamic templates
 =head1 DESCRIPTION
 
 When this extension is installed, RT parses the content of Articles as a
-template, using the L<Text::Template> module; this can be used to make
-your Articles dynamic.  L<Text::Template> is the same module that RT's
-Templates use as well.
+template, when inserting the article into a ticket, using the 
+L<Text::Template> module; this can be used to make your Articles dynamic.
+L<Text::Template> is the same module that RT's Templates use as well.
 
 =head1 VERY IMPORTANT
 
