@@ -1,0 +1,15 @@
+diff --git a/share/html/Articles/Elements/IncludeArticle b/share/html/Articles/Elements/IncludeArticle
+index a64684c86..ce75ffb21 100644
+--- a/share/html/Articles/Elements/IncludeArticle
++++ b/share/html/Articles/Elements/IncludeArticle
+@@ -78,8 +78,9 @@ if ( $ret && $article->Id ){
+         return;
+     }
+ 
++    # $Ticket below is used by RT::Extension::ArticleTemplates
+     my $formatted_article = $m->scomp('/Articles/Article/Elements/Preformatted',
+-        Article => $article
++        Article => $article, Ticket => $Ticket
+     );
+ 
+     $m->callback( Article => $article, Ticket => $Ticket, formatted_article => \$formatted_article, ARGSRef => \%ARGS );

@@ -11,7 +11,8 @@ RT::Extension::ArticleTemplates - Turns Articles into dynamic templates
  
 =head1 RT VERSION
 
-Works with RT 4.0, 4.2 and 4.4.
+Works with RT 4.0, 4.2, 4.4 and 5.0.  RT 5.0.0 and 5.0.1 require patching
+(see the "Patch RT" section below.)
 
 =head1 DESCRIPTION
 
@@ -41,7 +42,7 @@ is installed -- even if it is not a valid template.
 
 May need root permissions
 
-=item Edit your F</opt/rt4/etc/RT_SiteConfig.pm>
+=item Edit your F</opt/rt5/etc/RT_SiteConfig.pm>
 
 If you are using RT 4.2 or greater, add this line:
 
@@ -53,9 +54,16 @@ For RT 4.0, add this line:
 
 or add C<RT::Extension::ArticleTemplates> to your existing C<@Plugins> line.
 
+=item Patch RT
+
+This step is required B<only> for RT versions 5.0.0 and 5.0.1.  Apply
+the patch as follows:
+
+    patch -p1 -d /path/to/rt < etc/restore-ticket-object-to-arguments-passed-to-preformatted.patch
+
 =item Clear your mason cache
 
-    rm -rf /opt/rt4/var/mason_data/obj
+    rm -rf /opt/rt5/var/mason_data/obj
 
 =item Restart your webserver
 
